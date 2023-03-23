@@ -1,0 +1,302 @@
+
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+  background-color: black;
+  color: #b6d420;
+  height: 30vh;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+header input {
+  width: 400px;
+  height: 40px;
+}
+
+header a {
+  color: #b6d420;
+  text-decoration: none;
+}
+
+header a:hover {
+  color: #b6d420;
+  text-decoration: underline;
+}
+
+header a i {
+  font-size: 20px;
+}
+
+header a i:hover {
+  color: white;
+}
+
+
+#arriba {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+#arriba div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+#abajo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#usario-incio {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+#usario-incio a {
+  width: 30px;
+  height: 30px;
+}
+
+.titulo-producto {
+  background-color: black;
+  text-align: center;
+  color: #b6d420;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.secciones {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-top: 70px;
+}
+
+.servicios{
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 100px;
+  margin-top: 70px;
+}
+
+.productos {
+  padding-top: 40px;
+  border: 1px solid black;
+  text-align: center;
+  flex-basis: 230px;
+  height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.productos:hover {
+  border: 1px solid #b6d420;
+  box-shadow: black;
+}
+
+.productos p {
+  font-size: larger;
+}
+
+main div section[class="productos"] img {
+  height: 130px;
+  width: 130px;
+  /* imghvr-fold-left; */
+}
+
+.introduccion {
+  text-align: center;
+  flex-basis: 230px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.introduccion i {
+  font-size: large;
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 20px;
+}
+
+.introduccion i:hover {
+  border: 1px solid #b6d420;
+  color: #b6d420;
+}
+
+#tienda {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Users */
+
+
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style-type: none;
+}
+.pagina-inicial{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+}
+
+aside {
+  position: absolute;
+  margin-top:60px ;
+  border: 1px black solid;
+  padding-bottom: 70px;
+  font-size: large;
+}
+
+footer {
+  background-color: black;
+  height: 300px;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 0px;
+  display: flex;
+  flex-direction: column;
+}
+
+footer iframe {
+  height: 400px;
+  width: 400px;
+}
+
+footer section:first-child {
+  display: flex;
+  border: 1px solid black;
+  color: #b6d420;
+  flex-basis: 250px;
+  height: 100px;
+  gap: 10px;
+
+}
+
+.productos:hover {
+  animation-duration: 3s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@media screen and (max-width: 480px){
+  header img{
+    width: 120px;
+    height: 30px;
+  }
+
+  header input{
+    width: 120px;
+    height: 30px;
+  }
+
+  header{
+    width: 100vw;
+  }
+
+  .titulo-producto{
+    width: 100vw;
+  }
+
+  .productos{
+    height: 350px;
+    width: 200px;
+  }
+
+  .servicios{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .secciones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+  }
+
+  .introduccion{
+    width: 100vw;
+  }
+
+  footer{
+    width: 100vw;
+  }
+
+  footer iframe{
+    width: 80vw;
+  }
+
+  main iframe{
+    width: 80vw;
+    height: 200px;
+  }
+
+  #tienda h3{
+    font-size: large;
+  }
+}
+
+
+/* Pantalla de tablet */
+@media screen and (min-width: 481px) and (max-width: 768px){
+  /* Selectores que se activan cuando la pantalla es menor a 768px
+  y mayor a 481px */
+  #abajo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+/* Pantalla de portatil */
+@media screen and (min-width: 769px) and (max-width: 1279px){
+  /* Selectores que se activan cuando la pantalla es menor a 1279px
+  y mayor a 769px */
+  #abajo{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  header{
+    height: 50vh;
+  }
+}

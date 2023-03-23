@@ -1,0 +1,292 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,700,300);
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background-color:black;
+    padding-top: 6px;
+    color:#b6d420 ;
+    height: 15vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+main {
+    background-color: white;
+    width: 80vw;
+    margin: 30px auto;
+    padding-right:100px ;
+    padding-left:100px ;
+    margin-bottom: 5em;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+main div:first-child{
+    text-align: center;
+}
+
+#mi-carrito {
+    padding: 1em 0;
+    border-bottom: 1px solid #D0D0D0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#carrito {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    padding-bottom: 40px;
+}
+
+.producto {
+    border-bottom: 1px solid #D0D0D0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items:flex-start;
+}
+
+.codigo{
+    text-align: center;
+    color: grey;
+}
+
+.precio-producto{
+    color: grey;
+}
+
+.cantidad{
+    padding: 5px;
+    border: 1px solid black;
+}
+.cantidad:hover{
+    border: 1px solid rgb(0, 102, 255);
+}
+
+.caracteristicas {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.precios {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+.imagen-producto {
+    width: 90px;
+    height: 110px;
+}
+
+.precio-x {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.x {
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+#final {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30%;
+}
+
+#final div:first-child {
+    display: flex;
+    flex-direction: column;
+}
+
+#final div:first-child div {
+    display: flex;
+    flex-direction: row;
+    gap: 0;
+}
+
+.promo{
+    border: 1px #D0D0D0 solid ;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+/* Botones */
+.boton {
+    text-decoration: none;
+    letter-spacing: -.015em;
+    font-size: 1em;
+    padding: 1em 3em;
+    color: #fff;
+    background: black;
+    border: 1px solid black;
+    float: right;
+    text-align: right;   
+}
+
+.boton:after {
+    content: "\276f";
+    padding: .5em;
+    position: relative;
+    right: 0;
+}
+
+.boton:hover {
+    background: #b6d420;
+}
+
+.boton:hover:after {
+    right: -10px;
+}
+
+.boton:focus {
+    background: #b6d420;
+}
+
+.boton:focus:after {
+    right: -10px;
+}
+
+.boton:active {
+    background: #b6d420;
+}
+
+.boton:active:after {
+    right: -10px;
+}
+
+/* x */
+.x {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    background: black;
+    padding: 10px;
+    font-size: .75em;
+    display: inline-block;
+    border-radius: 100%;
+    line-height: .85;
+
+}
+
+.x:hover {
+    background: #f30;
+}
+
+@media screen and (max-width: 480px){
+    header img{
+        width: 240px;
+        height: 90px;
+    }
+
+    main {
+        width: 70px;
+        background-color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 70px;
+    }
+    
+    
+    #mi-carrito{
+        border: none;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    #mi-carrito button{
+        padding: 10px;
+    }
+
+    .producto {
+        border: none;
+        padding-right: 90px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #final {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 60px;
+    }
+
+    .promo{
+        padding-bottom: 30px;
+        padding-right: 180px;
+        margin-right: 1000px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #final .promo input{
+        width: 110px;
+        border: 1px solid black;
+    }
+
+    #final .promo button{
+        padding: 10px;
+    }
+
+    .total{
+        margin-right: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #final .total button{
+        padding-right: 100px;
+    }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px){
+    header img{
+        width: 280px;
+        height: 90px;
+    }
+
+    header{
+        width: 100vw;
+    }
+
+    main{
+        margin-right: 10px;
+        
+    }
+
+    #final .promo input{
+        width: 110px;
+        border: 1px solid black;
+    }
+
+    #final .promo button{
+        padding: 10px;
+    }
+
+}
