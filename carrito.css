@@ -5,11 +5,12 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 header {
     background-color:black;
     padding-top: 6px;
     color:#b6d420 ;
-    height: 15vh;
+    height: 20vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -67,9 +68,11 @@ main div:first-child{
 .cantidad{
     padding: 5px;
     border: 1px solid black;
+    transition: 0.20s;
 }
 .cantidad:hover{
     border: 1px solid rgb(0, 102, 255);
+    transition: 0.20s;
 }
 
 .caracteristicas {
@@ -139,9 +142,10 @@ main div:first-child{
     padding: 1em 3em;
     color: #fff;
     background: black;
-    border: 1px solid black;
+    border: 2px solid black;
     float: right;
     text-align: right;   
+    transition: 0.40s;
 }
 
 .boton:after {
@@ -149,10 +153,12 @@ main div:first-child{
     padding: .5em;
     position: relative;
     right: 0;
+    transition: 0.40s;
 }
 
 .boton:hover {
     background: #b6d420;
+    transition: 0.40s;
 }
 
 .boton:hover:after {
@@ -186,14 +192,19 @@ main div:first-child{
     display: inline-block;
     border-radius: 100%;
     line-height: .85;
+    transition: 0.20s;
 
 }
 
 .x:hover {
     background: #f30;
+    transition: 0.20s;
 }
 
 @media screen and (max-width: 480px){
+    header {
+        height: 70vh;
+    }
     header img{
         width: 240px;
         height: 90px;
@@ -206,7 +217,6 @@ main div:first-child{
         flex-direction: column;
         gap: 70px;
     }
-    
     
     #mi-carrito{
         border: none;
@@ -273,6 +283,7 @@ main div:first-child{
 
     header{
         width: 100vw;
+        height: 80vh;
     }
 
     main{
@@ -290,3 +301,11 @@ main div:first-child{
     }
 
 }
+
+/* Pantalla de portatil */
+@media screen and (min-width: 769px) and (max-width: 1279px){
+  
+    header{
+      height: 20vh;
+    }
+  }

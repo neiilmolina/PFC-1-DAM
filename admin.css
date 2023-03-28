@@ -1,0 +1,91 @@
+body{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+header {
+    background-color:black;
+    padding-top: 6px;
+    color:#b6d420 ;
+    height: 20vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+table{
+    margin-top:80px;
+    width: 100%;
+    text-align: center;
+}
+.descripcion{
+    font-size: small;
+    padding: 0px;
+}
+
+.opciones{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+th{
+    padding: 10px;
+}
+
+tr:nth-child(odd){
+    padding: 10px;
+    background-color: black;
+    color: white;
+
+}
+
+tr:nth-child(even){
+    padding: 10px;
+    background-color: #b6d420;
+
+}
+
+.suma{
+    padding: 10px;
+    border-radius: 30%;
+    color: black;
+    background-color: green;
+    transition: 0.5s;
+}
+
+.suma:hover{
+    color:white;
+    padding: 11px;
+    transition: 0.5s;
+}
+
+.resta{
+    padding: 10px;
+    border-radius: 30%;
+    color: black;
+    background-color: red;
+    transition: 0.5s;
+}
+
+.resta:hover{
+    color:white;
+    padding: 11px;
+    transition: 0.5s;
+}
+
+.edit{
+    padding: 10px;
+    border-radius: 30%;
+    color: black;
+    background-color: gray;
+    transition: 0.5s;
+}
+
+.edit:hover{
+    color:white;
+    padding: 11px;
+    transition: 0.5s;
+}
