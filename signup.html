@@ -22,19 +22,22 @@
         <form action="">
             <div>
                 <label>Dirección de correo</label>
-                <input type="email" class="inicio" autofocus>
+                <input type="email" class="inicio" onblur="validarEmail()" autofocus>
+                <span></span>
                 <br>
 
                 <label>Contraseña</label>
-                <input type="password" class="inicio">
+                <input type="password" class="inicio" onblur="validarContraseña()">
+                <span></span>
                 <br>
 
                 <label>Confirmar Contraseña</label>
-                <input type="password" class="inicio">
+                <input type="password" class="inicio" onblur="confirmarContraseña()">
+                <span></span>
                 <br>
             </div>
 
-            <button type="submit">Acceder</button>
+            <button type="button" onclick="validar()">Acceder</button>
         </form>
 
         <a href="localhost">¿Olvidaste tu contraseña?</a>
@@ -43,5 +46,5 @@
 
     </main>
 </body>
-
+<script src="appSignUp.js"></script>
 </html>

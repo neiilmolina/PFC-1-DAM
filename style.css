@@ -8,18 +8,17 @@ body {
 header {
   background-color: black;
   color: #b6d420;
-  height: 35vh;
+  height: 21vh;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
   gap: 40px;
-  margin-bottom: 80px;
 }
 
 nav{
   background-color: black;
   width: 100vw;
-  height: 10vh;
+  height: 6vh;
   list-style: none;
   position: sticky;
   top: 0;
@@ -32,8 +31,56 @@ nav ul{
   flex-direction: row;
   align-items: center;
   text-align: center;
-  padding-top: 10px;
+  justify-content: space-around;
   gap:10%;
+}
+
+.dropbtn {
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  color: black;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  padding: 12px 16px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #b6d420;
+  color: black;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+.lupa{
+  display: flex;
+  flex-direction: row-reverse;
 }
 
 header input {
@@ -321,6 +368,6 @@ footer section:first-child {
   }
 
   header{
-    height: 50vh;
+    height: 24vh;
   }
 }

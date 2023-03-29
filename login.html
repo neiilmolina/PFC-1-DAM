@@ -22,20 +22,22 @@
         <form action="">
             <div>
                 <label>Dirección de correo</label>
-                <input type="email" class="inicio" autofocus>
+                <input type="email" class="inicio" onblur="validarEmail()" autofocus>
+                <span></span>
                 <br>
 
                 <label>Contraseña</label>
                 <input type="password" class="inicio">
+                <span></span>
                 <br>
             </div>
 
             <div>
                 <div>
-                    <input type="checkbox">
+                    <input id="marcar" type="checkbox">
                     <label>Recuérdame</label>
                 </div>
-                <button type="submit">Acceder</button>
+                <button type="button" onclick="validar()">Acceder</button>
             </div>
         </form>
 
@@ -45,5 +47,5 @@
 
     </main>
 </body>
-
+<script src="appLogin.js"></script>
 </html>

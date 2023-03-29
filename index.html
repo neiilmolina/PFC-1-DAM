@@ -46,14 +46,29 @@
     </header>
     <nav>
         <ul>
-            <li>Patinetes</li>
-            <li>Baterias</li>
-            <li>Hola</li>
-            <li>Hola</li>
+            <li class="dropdown">
+                <button class="dropbtn">Patinetes</button>
+                <div class="dropdown-content">
+                    <a href="#">Nuevos</a>
+                    <a href="#">Reacondcionados</a>
+                    <a href="#">Marcas</a>
+                    <a href="#">Más vendidos</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn">Baterias</button>
+                <div class="dropdown-content">
+                    <a href="#">Baterias Nuevas</a>
+                    <a href="#">Reacondcionadas</a>
+                    <a href="#">Vendidas</a>
+                </div>
+            </li>
+            <li class="dropbtn">Contactanos</li>
+            <li class="dropbtn">Inicia Sesión</li>
+            <li class="dropbtn">Registrate</li>
             <li>
                 <div id="lupa">
-                    <input type="text">
-                    <a href=""><i class="fas fa-search"></i></a>
+                    <button onclick="mostrarBusqueda()"><i class="fas fa-search"></i></button>
                 </div>
             </li>
         </ul>
@@ -242,5 +257,5 @@
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12153.175282627855!2d-3.6985241!3d40.4023413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1670178916358!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </footer>
 </body>
-
+<script src="app.js"></script>
 </html>
