@@ -52,12 +52,14 @@ function validarEmail(){
     if(expresion.test(valor)){
         console.log('correcto')
         input[0].classList.remove('inicio');
+        input[0].classList.remove('incorrecto');
         input[0].classList.add('correcto');
         span[0].textContent = 'Correcto'
         span[0].style.color = 'green'
     } else{
         console.log('Incompleto');
         input[0].classList.remove('inicio');
+        input[0].classList.remove('correcto');
         input[0].classList.add('incorrecto');
         span[0].textContent = 'Incorrecto'
         span[0].style.color = 'red'

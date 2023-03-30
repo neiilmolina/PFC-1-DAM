@@ -8,7 +8,7 @@ body {
 header {
   background-color: black;
   color: #b6d420;
-  height: 21vh;
+  height: 32vh;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
@@ -17,13 +17,12 @@ header {
 
 nav{
   background-color: black;
-  width: 100vw;
-  height: 6vh;
+  width: 100%;
+  height: 7vh;
   list-style: none;
   position: sticky;
   top: 0;
   z-index: 999;
-  margin-bottom: 30px;
 }
 
 nav ul{
@@ -32,7 +31,31 @@ nav ul{
   align-items: center;
   text-align: center;
   justify-content: space-around;
-  gap:10%;
+  gap:4%;
+}
+
+.lupa{
+  background-color: black;
+  border: black 1px solid;
+}
+
+.lupa i{
+  color: white;
+}
+
+.navegador{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+.navegador input{
+  margin: 40px;
+  width: 80%;
+  border: 1px black solid;
 }
 
 .dropbtn {
@@ -76,11 +99,6 @@ nav ul{
 
 .dropdown:hover .dropbtn {
   background-color: black;
-}
-
-.lupa{
-  display: flex;
-  flex-direction: row-reverse;
 }
 
 header input {
@@ -238,17 +256,10 @@ li {
   list-style-type: none;
 }
 .pagina-inicial{
+  margin-top: 30px;
   display: flex;
   flex-direction: row;
   gap:10px;
-}
-
-aside {
-  position: absolute;
-  margin-top:60px ;
-  border: 1px black solid;
-  padding-bottom: 70px;
-  font-size: large;
 }
 
 footer {
@@ -284,6 +295,9 @@ footer section:first-child {
 }
 
 @media screen and (max-width: 480px){
+  body{
+    margin:0;
+  }
   header img{
     width: 120px;
     height: 30px;
@@ -295,7 +309,18 @@ footer section:first-child {
   }
 
   header{
-    width: 100vw;
+    width: 114.5vw;
+  }
+
+  nav{
+    width: 114.5vw;
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    gap: 4%;
+    font-size: smaller;
   }
 
   .titulo-producto{
@@ -355,6 +380,19 @@ footer section:first-child {
     flex-wrap: wrap;
     flex-direction: column;
   }
+  header{
+    height: 43vh;
+  }
+
+  nav{
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: space-around;
+    gap: 10%;
+  }
 }
 
 /* Pantalla de portatil */
@@ -368,6 +406,12 @@ footer section:first-child {
   }
 
   header{
-    height: 24vh;
+    height: 34vh;
+  }
+  nav{
+    width: 100vw;
+    height: 30vh;
+    gap: 4%;
   }
 }
+

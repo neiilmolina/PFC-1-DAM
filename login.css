@@ -55,6 +55,11 @@ input{
     border: 2px solid red;
 }
 
+#marcar{
+    width: 23px;
+    height: 23px;
+}
+
 button{
     background:black;
     display:inline-block;
