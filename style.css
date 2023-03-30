@@ -216,6 +216,7 @@ main div section[class="productos"] img {
 }
 
 .introduccion {
+  margin-bottom: 60px;
   text-align: center;
   flex-basis: 230px;
   height: 150px;
@@ -263,7 +264,6 @@ li {
 
 footer {
   background-color: black;
-  height: 300px;
   text-align: center;
   margin-top: 5px;
   margin-left: 0px;
@@ -272,9 +272,8 @@ footer {
 }
 
 footer iframe {
-  height: 400px;
+  height: 200px;
   width: 400px;
-  margin-left: 50px;
 }
 
 footer div:first-child {
@@ -282,6 +281,7 @@ footer div:first-child {
   border: 1px solid black;
   color: #b6d420;
   justify-content: space-around;
+  margin-bottom: 20px;
 
 }
 
