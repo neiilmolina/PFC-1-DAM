@@ -5,8 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="author" content="Neil Molina; Gonzalo Leiva">
-    <meta name="keywords" content="patines electricos, patines reacondicionados, patines nuevos, accesorios para patines, baterías para patines">
-    <meta name="description" content="Una tienda de patines eléctricos nuevos y reacondcionados que tiene servicio a domicilio y una tienda en Madrid">
+    <meta name="keywords"
+        content="patines electricos, patines reacondicionados, patines nuevos, accesorios para patines, baterías para patines">
+    <meta name="description"
+        content="Una tienda de patines eléctricos nuevos y reacondcionados que tiene servicio a domicilio y una tienda en Madrid">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecscooter</title>
     <link rel="stylesheet" href="style.css">
@@ -38,6 +40,12 @@
 
         <div id="abajo">
             <img src="img/logo.png" alt="">
+
+            <div class="navegador">
+                <input type="text">
+                <button class="lupa"><i class="fas fa-search"></i></button>
+            </div>
+
             <div id="usario-incio">
                 <a href="login.html"><i class="fas fa-user"></i></a>
                 <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
@@ -65,15 +73,8 @@
             </li>
             <li class="dropbtn">Contactanos</li>
             <li class="dropbtn">Inicia Sesión</li>
-            <li class="dropbtn">Registrate</li>
-
-
-            <li class="busqueda">
-                <button class="lupa" onclick="mostrarBusqueda()"><i class="fas fa-search"></i></button>
-            </li>
         </ul>
     </nav>
-    <div class="navegador"></div>
     <div class="pagina-inicial">
         <main>
             <h2 class="titulo-producto">DISFRUTA DE NUESTROS SERVICIOS</h2>
@@ -244,19 +245,34 @@
             <h2 class="titulo-producto">¡VISITA NUESTRA TIENDA!</h2>
             <div id="tienda">
                 <h3>C. de Bernardino Obregón, 25, 28012 Madrid</h3>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12153.175282627855!2d-3.6985241!3d40.4023413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1670178916358!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12153.175282627855!2d-3.6985241!3d40.4023413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1670178916358!5m2!1ses!2ses"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
         </main>
     </div>
     <footer id="footer">
-        <section>
-            <p> <i class="fas fa-phone-alt"></i> 696549325 </p>
-            <p><i class="fas fa-envelope"></i> contactanos@Ecoscoter.es</p>
-            <p><i class="fas fa-map-marker-alt"></i> C. de Bernardino Obregón, 25, 28012 Madrid</p>
-        </section>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12153.175282627855!2d-3.6985241!3d40.4023413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1670178916358!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div>
+            <div class="contacto">
+                <p> <i class="fas fa-phone-alt"></i> 696549325 </p>
+                <p><i class="fas fa-envelope"></i> contactanos@Ecoscoter.es</p>
+                <p><i class="fas fa-map-marker-alt"></i> C. de Bernardino Obregón, 25, 28012 Madrid</p>
+            </div>
+            <div class="redes-sociales">
+                <a href="#"><i class="fab fa-instagram-square"></i> Intagram</a href="#">
+                <a href="#"><i class="fab fa-facebook"></i> Facebook</a href="#">
+                <a href="#"><i class="fab fa-tiktok"></i> Tik tok</a href="#">
+            </div>
+        </div>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12153.175282627855!2d-3.6985241!3d40.4023413!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x12f6d2396a33911!2sIMF%20Smart%20Education!5e0!3m2!1ses!2ses!4v1670178916358!5m2!1ses!2ses"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
     </footer>
 </body>
 <script src="app.js"></script>
+
 </html>

@@ -98,7 +98,16 @@ a:hover{
         bottom: 20px;
     }
 
-    .inicio{
-        width:100%;
+    
+    input{
+        width: 100%;
+    }
+
+    .correcto{
+        width: 100%;
+    }
+    
+    .incorrecto{
+        width: 100%;
     }
 }
