@@ -6,7 +6,7 @@ body {
 header {
   background-color: black;
   color: #b6d420;
-  height: 33vh;
+  height: 27vh;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
@@ -186,12 +186,17 @@ header a i:hover {
   margin-top: 70px;
 }
 
+.secciones a{
+  text-decoration: none;
+  color: black;
+}
+
 .productos {
   padding-top: 40px;
   border: 1px solid black;
   text-align: center;
   width: 230px;
-  height: 280px;
+  height: 410px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -202,7 +207,7 @@ header a i:hover {
   border: 1px solid black;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
   width: 260px;
-  height: 310px;
+  height: 440px;
   transition: 0.40s;
 }
 
@@ -330,6 +335,7 @@ footer div:first-child {
   }
 
   header {
+    height:25vh;
     width: 100vw;
     display: flex;
     
@@ -418,11 +424,11 @@ footer div:first-child {
   }
 
   header {
-    height: 43vh;
+    height: 30vh;
   }
 
   nav {
-    height: 10vh;
+    height: 5vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -445,12 +451,12 @@ footer div:first-child {
 
   header {
     width: 100vw;
-    height: 34vh;
+    height: 30vh;
   }
 
   nav {
     width: 100vw;
-    height: 30vh;
+    height: 5vh;
     gap: 4%;
   }
 }

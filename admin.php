@@ -136,7 +136,6 @@
                     ?>
                 </div>
             </li>
-            <li class="dropbtn">Inicia Sesión</li>
         </ul>
     </nav>
     <main>

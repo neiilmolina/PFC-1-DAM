@@ -7,12 +7,24 @@
             echo '<a href= "admin.php?nombre='. $row .'">'. $row. '</a>';
         }
     }
+    function pintarCard($resultados){
+        foreach($resultados as $row){
+            echo '<a href=#>';
+            echo '<div class = productos>';
+                echo '<img src="img/'. $row['tipo']. ' '. $row['modelo'] .'.JPG">';
+                echo '<p>' .  $row['tipo'] . '</p>';
+                echo '<p>' .  $row['marcas'] . '</p>';
+                echo '<p>' .  $row['modelo'] . '</p>';
+                echo '<p>' .  $row['precio'] .'€' . '</p>';
+            echo '</div>';
+            echo '</a>';
+        }
+    }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -87,7 +99,6 @@
                     ?>
                 </div>
             </li>
-            <li class="dropbtn">Inicia Sesión</li>
         </ul>
     </nav>
     <div class="pagina-inicial">
@@ -148,14 +159,7 @@
             <div class="secciones">
                 <?php
                     $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Reacondicionado'");
-                    foreach($resultados as $row){
-                        echo '<div class = productos>';
-                            echo '<p>' .  $row['tipo'] . '</p>';
-                            echo '<p>' .  $row['marcas'] . '</p>';
-                            echo '<p>' .  $row['modelo'] . '</p>';
-                            echo '<p>' .  $row['precio'] .'€' . '</p>';
-                        echo '</div>';
-                    }
+                    pintarCard($resultados)
                 ?>
             </div>
 
@@ -163,14 +167,7 @@
             <div class="secciones">
                 <?php
                     $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Nuevo' AND tipo = 'Patinete'");
-                    foreach($resultados as $row){
-                        echo '<div class = productos>';
-                            echo '<p>' .  $row['tipo'] . '</p>';
-                            echo '<p>' .  $row['marcas'] . '</p>';
-                            echo '<p>' .  $row['modelo'] . '</p>';
-                            echo '<p>' .  $row['precio'] .'€' . '</p>';
-                        echo '</div>';
-                    }
+                    pintarCard($resultados);
                 ?>
             </div>
 
@@ -180,16 +177,7 @@
 
                 <?php
                     $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Nuevo' AND tipo = 'Bateria'");
-                    foreach($resultados as $row){
-                        if($row['tipo']=='Bateria' && $row['estado']=='Nuevo' ){
-                            echo '<div class = productos>';
-                                echo '<p>' .  $row['tipo'] . '</p>';
-                                echo '<p>' .  $row['marcas'] . '</p>';
-                                echo '<p>' .  $row['modelo'] . '</p>';
-                                echo '<p>' .  $row['precio'] .'€' . '</p>';
-                            echo '</div>';
-                        }
-                    }
+                    pintarCard($resultados);
                 ?>
             </div>
 
@@ -197,14 +185,7 @@
             <div class="secciones">
                 <?php
                     $resultados = $database->get("SELECT * FROM producto WHERE tipo = 'Accesorio' AND estado = 'Nuevo'");
-                    foreach($resultados as $row){
-                        echo '<div class = productos>';
-                            echo '<p>' .  $row['tipo'] . '</p>';
-                            echo '<p>' .  $row['marcas'] . '</p>';
-                            echo '<p>' .  $row['modelo'] . '</p>';
-                            echo '<p>' .  $row['precio'] .'€' . '</p>';
-                        echo '</div>';
-                    }
+                    pintarCard($resultados);
                 ?>
             </div>
             <h2 class="titulo-producto">¡VISITA NUESTRA TIENDA!</h2>
