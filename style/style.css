@@ -87,6 +87,7 @@ nav ul {
 }
 
 .dropdown-content a:hover {
+  transition: 0.5s;
   background-color: #b6d420;
   color: black;
 }

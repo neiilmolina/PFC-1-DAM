@@ -11,14 +11,14 @@
         content="Una tienda de patines eléctricos nuevos y reacondcionados que tiene servicio a domicilio y una tienda en Madrid">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="../style/signup.css">
 </head>
 
 <body>
     <main>
 
-        <img src="img/logo1.png" alt="">
-        <h2>Inicia Sesion</h2>
+        <img src="../img/logo1.png" alt="">
+        <h2>Registrate</h2>
         <form action="">
             <div>
                 <label>Dirección de correo</label>
@@ -27,25 +27,24 @@
                 <br>
 
                 <label>Contraseña</label>
-                <input type="password" class="inicio">
+                <input type="password" class="inicio" onblur="validarContraseña()">
+                <span></span>
+                <br>
+
+                <label>Confirmar Contraseña</label>
+                <input type="password" class="inicio" onblur="confirmarContraseña()">
                 <span></span>
                 <br>
             </div>
 
-            <div>
-                <div>
-                    <input id="marcar" type="checkbox">
-                    <label>Recuérdame</label>
-                </div>
-                <button type="button" onclick="validar()">Acceder</button>
-            </div>
+            <button type="button" onclick="validar()">Acceder</button>
         </form>
 
         <a href="localhost">¿Olvidaste tu contraseña?</a>
-        <a href="signup.html">¿No tienes cuenta?</a>
-        <a href="index.html">Volver a EcoScoter</a>
+        <a href="login.php">¿Tienes cuenta?</a>
+        <a href="../index.php">Volver a EcoScoter</a>
 
     </main>
 </body>
-<script src="appLogin.js"></script>
+<script src="../js/appSignUp.js"></script>
 </html>

@@ -161,6 +161,8 @@ body {
   }      
 
 table{
+    border-collapse: separate;
+    border-spacing: 0 10px;
     margin-top:80px;
     width: 100%;
     text-align: center;
@@ -172,13 +174,12 @@ table{
 
 .opciones{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
+    gap: 10px;
 }
 
-th{
+td,th{
     padding: 10px;
 }
 
@@ -195,47 +196,35 @@ tr:nth-child(even){
 
 }
 
-.suma{
-    padding: 10px;
-    border-radius: 30%;
-    color: black;
-    background-color: green;
-    transition: 0.5s;
+.suma, .resta, .edit {
+  border-radius: 30%;
+  color:black;
+  border: inherit;
+  padding: 10px;
 }
 
-.suma:hover{
-    color:white;
-    padding: 11px;
-    transition: 0.5s;
+.suma i, .resta i , .edit i{
+  color: black;
+  transition: 0.25s;
+}
+
+.suma{
+  background-color: green;
 }
 
 .resta{
-    padding: 10px;
-    border-radius: 30%;
-    color: black;
-    background-color: red;
-    transition: 0.5s;
-}
-
-.resta:hover{
-    color:white;
-    padding: 11px;
-    transition: 0.5s;
+  background-color: red;
 }
 
 .edit{
-    padding: 10px;
-    border-radius: 30%;
-    color: black;
-    background-color: gray;
-    transition: 0.5s;
+  background-color: grey;
 }
 
-.edit:hover{
-    color:white;
-    padding: 11px;
-    transition: 0.5s;
+.suma i:hover, .resta i:hover , .edit i:hover{
+  color: white;
+  transition: 0.25s;
 }
+
 
 @media screen and (max-width: 480px) {
     body {

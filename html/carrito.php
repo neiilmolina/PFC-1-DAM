@@ -11,13 +11,13 @@
         content="Una tienda de patines eléctricos nuevos y reacondcionados que tiene servicio a domicilio y una tienda en Madrid">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecscooter</title>
-    <link rel="stylesheet" href="carrito.css">
+    <link rel="stylesheet" href="../style/carrito.css">
     <link rel="stylesheet" href="../fontawesome/fontawesome/css/all.min.css">
 </head>
 
 <body>
     <header>
-        <img src="img/logo.png" alt="">
+        <img src="../img/logo.png" alt="">
 
     </header>
     <main>
@@ -41,7 +41,7 @@
                     </li>
                 </ul>
 
-                <img class="imagen-producto" src="img/accesorio1.jpg" alt="">
+                <img class="imagen-producto" src="../img/accesorio1.jpg" alt="">
 
                 <div class="precio-x">
                     <p class="precio-total">
@@ -65,7 +65,7 @@
                     </li>
                 </ul>
 
-                <img class="imagen-producto" src="img/accesorio5.jpg" alt="">
+                <img class="imagen-producto" src="../img/accesorio5.jpg" alt="">
 
                 <div class="precio-x">
                     <p class="precio-total">
@@ -89,7 +89,7 @@
                     </li>
                 </ul>
 
-                <img class="imagen-producto" src="img/accesorio3.jpg" alt="">
+                <img class="imagen-producto" src="../img/accesorio3.jpg" alt="">
 
                 <div class="precio-x">
                     <p class="precio-total">

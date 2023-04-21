@@ -1,3 +1,15 @@
+<?php
+    require_once ('database/database.php');
+    $database = new Database();
+    $arrayTablas = ['Cliente', 'Producto', 'Trabajador', 'Distribuidor'];
+    function pintarOpcionAdmin($array){
+        foreach($array as $row ){
+            echo '<a href= "admin.php?nombre='. $row .'">'. $row. '</a>';
+        }
+    }
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,11 +23,10 @@
         content="Una tienda de patines eléctricos nuevos y reacondcionados que tiene servicio a domicilio y una tienda en Madrid">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ecscooter</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
 
 </head>
-
 <body>
     <header>
         <div id="arriba">
@@ -39,8 +50,8 @@
             </div>
 
             <div id="usario-incio">
-                <a href="login.html"><i class="fas fa-user"></i></a>
-                <a href="carrito.html"><i class="fas fa-shopping-cart"></i></a>
+                <a href="html/login.php"><i class="fas fa-user"></i></a>
+                <a href="html/carrito.php"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </header>
@@ -52,7 +63,6 @@
                     <a href="#">Nuevos</a>
                     <a href="#">Reacondcionados</a>
                     <a href="#">Marcas</a>
-                    <a href="#">Más vendidos</a>
                 </div>
             </li>
             <li class="dropdown">
@@ -60,10 +70,23 @@
                 <div class="dropdown-content">
                     <a href="#">Baterias Nuevas</a>
                     <a href="#">Reacondcionadas</a>
-                    <a href="#">Vendidas</a>
                 </div>
             </li>
-            <li class="dropbtn">Contactanos</li>
+            <li class="dropdown">
+                <button class="dropbtn">Accesorios</button>
+                <div class="dropdown-content">
+                    <a href="#">Accesorios Nuevas</a>
+                    <a href="#">Reacondcionadas</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <button class="dropbtn">Admin</button>
+                <div class="dropdown-content">
+                    <?php
+                        pintarOpcionAdmin($arrayTablas);
+                    ?>
+                </div>
+            </li>
             <li class="dropbtn">Inicia Sesión</li>
         </ul>
     </nav>
@@ -123,116 +146,66 @@
             </div>
             <h2 class="titulo-producto">REACONDICIONADOS</h2>
             <div class="secciones">
-                <section class="productos">
-                    <img src="img/EVAMVA1.png" alt="">
-                    <p>EVAMVA</p>
-                    <p>480€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/EVAMVA2.png" alt="">
-                    <p>Luces led integrado</p>
-                    <p>RGB</p>
-                </section>
-                <section class="productos">
-                    <img src="img/EVAMVA3.png" alt="">
-                    <p>Llave con boltimetro</p>
-                    <p>marca el % de la bateria </p>
-                </section>
-                <section class="productos">
-                    <img src="img/EVAMVA4.png" alt="">
-                    <p>Bolsa que incluye herramientas </p>
-                    <p>Para ajustes del patinete</p>
-                </section>
-                <section class="productos">
-                    <img src="img/EVAMVA5.png" alt="">
-                    <p>Cargador Original</p>
-                    <p>de 48v</p>
-                </section>
+                <?php
+                    $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Reacondicionado'");
+                    foreach($resultados as $row){
+                        echo '<div class = productos>';
+                            echo '<p>' .  $row['tipo'] . '</p>';
+                            echo '<p>' .  $row['marcas'] . '</p>';
+                            echo '<p>' .  $row['modelo'] . '</p>';
+                            echo '<p>' .  $row['precio'] .'€' . '</p>';
+                        echo '</div>';
+                    }
+                ?>
             </div>
 
             <h2 class="titulo-producto" id="patinetes">NUEVOS PATINETES</h2>
             <div class="secciones">
-                <section class="productos">
-                    <img src="img/SMARGYRO1.jpg" alt="">
-                    <p>SMARGYRO</p>
-                    <p>830€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/SMARGYRO2.jpg" alt="">
-                    <p>Intermitentes integrado</p>
-                    <p>830€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/SMARGYRO3.jpg" alt="">
-                    <p>Bateria de laga duración</p>
-                    <p> 17.500 mAh</p>
-                </section>
-                <section class="productos">
-                    <img src="img/SMARGYRO4.jpg" alt="">
-                    <p>Luces led</p>
-                    <p>color azul</p>
-                </section>
-                <section class="productos">
-                    <img src="img/SMARGYRO5.jpg" alt="">
-                    <p>Desplegable</p>
-                    <p>peso 30KG</p>
-                </section>
+                <?php
+                    $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Nuevo' AND tipo = 'Patinete'");
+                    foreach($resultados as $row){
+                        echo '<div class = productos>';
+                            echo '<p>' .  $row['tipo'] . '</p>';
+                            echo '<p>' .  $row['marcas'] . '</p>';
+                            echo '<p>' .  $row['modelo'] . '</p>';
+                            echo '<p>' .  $row['precio'] .'€' . '</p>';
+                        echo '</div>';
+                    }
+                ?>
             </div>
-            <h2 class="titulo-producto" id="patinetes">BATERIAS</h2>
+
+            
+            <h2 class="titulo-producto" >BATERIAS</h2>
             <div class="secciones">
-                <section class="productos">
-                    <img src="img/bateria1.jpg" alt="">
-                    <p>Bateria para samrgyro pro </p>
-                    <p>250€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/bateria2.jpg" alt="">
-                    <p>Bateria para smargyro crrosover x2</p>
-                    <p>280€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/bateria3.jpg" alt="">
-                    <p>Bateria para xiaomi</p>
-                    <p>250€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/bateria4.jpg" alt="">
-                    <p>Bateria para cecotec</p>
-                    <p>165€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/bateria5.jpg" alt="">
-                    <p>Para baterias a medida contactanos</p>
-                    <p></p>
-                </section>
+
+                <?php
+                    $resultados = $database->get("SELECT * FROM producto WHERE estado = 'Nuevo' AND tipo = 'Bateria'");
+                    foreach($resultados as $row){
+                        if($row['tipo']=='Bateria' && $row['estado']=='Nuevo' ){
+                            echo '<div class = productos>';
+                                echo '<p>' .  $row['tipo'] . '</p>';
+                                echo '<p>' .  $row['marcas'] . '</p>';
+                                echo '<p>' .  $row['modelo'] . '</p>';
+                                echo '<p>' .  $row['precio'] .'€' . '</p>';
+                            echo '</div>';
+                        }
+                    }
+                ?>
             </div>
-            <h2 class="titulo-producto" id="patinetes">ACCESORIOS</h2>
+
+            <h2 class="titulo-producto">ACCESORIOS</h2>
             <div class="secciones">
-                <section class="productos">
-                    <img src="img/accesorio1.jpg" alt="">
-                    <p>Bolsa de carbono smargyro</p>
-                    <p>20€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/accesorio2.jpg" alt="">
-                    <p>Cargador original smargyro pro</p>
-                    <p>48€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/accesorio3.jpg" alt="">
-                    <p>Lija para patinete Smargyro</p>
-                    <p>15€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/accesorio4.jpg" alt="">
-                    <p>Casco inteligente Smargyro</p>
-                    <p>59€</p>
-                </section>
-                <section class="productos">
-                    <img src="img/accesorio5.jpg" alt="">
-                    <p>Alarma con dos mandos</p>
-                    <p>69€</p>
-                </section>
+                <?php
+                    $resultados = $database->get("SELECT * FROM producto WHERE tipo = 'Accesorio' AND estado = 'Nuevo'");
+                    foreach($resultados as $row){
+                        echo '<div class = productos>';
+                            echo '<p>' .  $row['tipo'] . '</p>';
+                            echo '<p>' .  $row['marcas'] . '</p>';
+                            echo '<p>' .  $row['modelo'] . '</p>';
+                            echo '<p>' .  $row['precio'] .'€' . '</p>';
+                        echo '</div>';
+                    }
+                ?>
             </div>
             <h2 class="titulo-producto">¡VISITA NUESTRA TIENDA!</h2>
             <div id="tienda">
