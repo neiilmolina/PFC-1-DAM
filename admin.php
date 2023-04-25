@@ -50,7 +50,7 @@
             }
                 echo '<td class = opciones> ';
                     echo '<button class="suma"> <a href ="#"> <i class="fas fa-plus"></i> </a></button>';
-                    echo '<button class="resta"> <a href ="#"> <i class="fas fa-minus"></i> </a></button>';
+                    echo '<button class="resta"> <a href ="database/delete.php?id='.$row['id'].'&nombre='. $tabla.'"> <i class="fas fa-minus"></i> </a></button>';
                     echo '<button class="edit"> <a href ="#"> <i class="fas fa-edit"></i> </a></button>';
                 echo '</td>';
             echo '</tr>';

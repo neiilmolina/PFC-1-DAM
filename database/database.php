@@ -37,6 +37,11 @@
             $resultados = self::conectar()->query($sql); // "self" es "this" en Java
             return $resultados;
         }
+
+        public function delete($tabla, $id){
+            $sql = "DELETE FROM $tabla WHERE id = $id"; 
+            self::conectar()->query($sql);
+        }
     }
         
 ?>
