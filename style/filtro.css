@@ -2,8 +2,8 @@ body {
     margin: 0;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
   }
-  
-  header {
+
+header {
     background-color: black;
     color: #b6d420;
     height: 33vh;
@@ -159,159 +159,42 @@ body {
   #usario-incio a {
     width: 30px;
     height: 30px;
-  }      
+  }   
 
-table{
-    border-collapse: separate;
-    border-spacing: 0 10px;
-    margin-top:80px;
-    width: 100%;
-    text-align: center;
-}
-.descripcion{
-    font-size: small;
-    padding: 0px;
-}
-
-.opciones{
+  main{
+    margin-top: 50px;
+  }
+  .secciones{
+    margin-top: 50px;
     display: flex;
-    flex-direction: row;
+    gap: 40px;
     justify-content: center;
-    gap: 10px;
-}
+    align-items: center;
+    flex-wrap: wrap;
+  }
 
-td,th{
-    padding: 10px;
-}
-
-tr:nth-child(odd){
-    padding: 10px;
-    background-color: black;
-    color: white;
-
-}
-
-tr:nth-child(even){
-    padding: 10px;
-    background-color: #b6d420;
-
-}
-
-.suma, .resta, .edit {
-  border-radius: 30%;
-  color:black;
-  border: inherit;
-  padding: 10px;
-}
-
-.suma i, .resta i , .edit i{
-  color: black;
-  transition: 0.25s;
-}
-
-.suma{
-  background-color: green;
-}
-
-.resta{
-  background-color: red;
-}
-
-.edit{
-  background-color: grey;
-}
-
-.suma i:hover, .resta i:hover , .edit i:hover{
-  color: white;
-  transition: 0.25s;
-}
-
-
-@media screen and (max-width: 480px) {
-    body {
-      margin: 0;
-    }
+  .productos {
+    padding-top: 40px;
+    border: 1px solid black;
+    text-align: center;
+    width: 230px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.40s;
+  }
   
-    header img {
-      width: 120px;
-      height: 30px;
-    }
+  .productos:hover {
+    border: 1px solid black;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    width: 260px;
+    height: 440px;
+    transition: 0.40s;
+  }
   
-    header {
-      width: 100vw;
-      display: flex;
-      
-    }
-  
-    .navegador{
-      width: 50px;
-      flex-direction: row;
-    }
-  
-    .navegador input{
-      padding: 0;
-      margin: 0;
-    }
-  
-    nav {
-      width: 100vw;
-      height: 10vh;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      text-align: center;
-      flex-wrap: wrap;
-      gap: 4%;
-      font-size: smaller;
-    }
+  .productos p {
+    font-size: larger;
   }
   
   
-  /* Pantalla de tablet */
-  @media screen and (min-width: 481px) and (max-width: 768px) {
-  
-    /* Selectores que se activan cuando la pantalla es menor a 768px
-    y mayor a 481px */
-    #abajo {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-  
-    header {
-      height: 43vh;
-    }
-  
-    nav {
-      height: 10vh;
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      text-align: center;
-      justify-content: space-around;
-      gap: 10%;
-    }
-  }
-  
-  /* Pantalla de portatil */
-  @media screen and (min-width: 769px) and (max-width: 1279px) {
-  
-    /* Selectores que se activan cuando la pantalla es menor a 1279px
-    y mayor a 769px */
-    #abajo {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: column;
-    }
-  
-    header {
-      width: 100vw;
-      height: 34vh;
-    }
-  
-    nav {
-      width: 100vw;
-      height: 30vh;
-      gap: 4%;
-    }
-  }

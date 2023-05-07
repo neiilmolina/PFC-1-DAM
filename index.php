@@ -2,6 +2,26 @@
     require_once ('database/database.php');
     $database = new Database();
     $arrayTablas = ['Cliente', 'Producto', 'Trabajador', 'Distribuidor'];
+    $arrayTipos = ['Patinete', 'Bateria', 'Accesorio', 'Admin'];
+    $arrayEstados = ['Nuevo', 'Reacondicionado'];
+
+    function pintarNav($array1, $array2, $array3){
+        foreach($array1 as $row){
+           echo '<li class="dropdown">';
+               echo '<button class="dropbtn">'. $row .'</button>';
+               echo '<div class="dropdown-content">';
+                   if($row == 'Admin'){
+                    pintarOpcionAdmin($array3);
+                   } else{
+                    foreach($array2 as $opcion){
+                        echo '<a href= "filtro.php?tipo='. $row .'&estado='. $opcion.'">'. $opcion. '</a>';
+                    }
+                   }
+                echo '</div>';
+            echo '</li>';
+        }
+    }
+
     function pintarOpcionAdmin($array){
         foreach($array as $row ){
             echo '<a href= "admin.php?nombre='. $row .'">'. $row. '</a>';
@@ -54,7 +74,7 @@
         </div>
 
         <div id="abajo">
-            <img src="img/logo.png" alt="">
+            <a href="index.php"><img src="img/logo.png" alt=""></a>
 
             <div class="navegador">
                 <input type="text">
@@ -69,36 +89,9 @@
     </header>
     <nav>
         <ul>
-            <li class="dropdown">
-                <button class="dropbtn">Patinetes</button>
-                <div class="dropdown-content">
-                    <a href="#">Nuevos</a>
-                    <a href="#">Reacondcionados</a>
-                    <a href="#">Marcas</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button class="dropbtn">Baterias</button>
-                <div class="dropdown-content">
-                    <a href="#">Baterias Nuevas</a>
-                    <a href="#">Reacondcionadas</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button class="dropbtn">Accesorios</button>
-                <div class="dropdown-content">
-                    <a href="#">Accesorios Nuevas</a>
-                    <a href="#">Reacondcionadas</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <button class="dropbtn">Admin</button>
-                <div class="dropdown-content">
-                    <?php
-                        pintarOpcionAdmin($arrayTablas);
-                    ?>
-                </div>
-            </li>
+            <?php
+                pintarNav($arrayTipos, $arrayEstados, $arrayTablas);
+            ?>
         </ul>
     </nav>
     <div class="pagina-inicial">

@@ -6,7 +6,7 @@ body {
 header {
   background-color: black;
   color: #b6d420;
-  height: 27vh;
+  height: 33vh;
   padding-top: 10px;
   display: flex;
   flex-direction: column;
@@ -48,6 +48,8 @@ nav {
 }
 
 nav ul {
+  margin-top: 0;
+  padding-top: 10px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -57,6 +59,7 @@ nav ul {
 }
 
 .dropbtn {
+  list-style: none;   
   background-color: black;
   color: white;
   font-size: 16px;
@@ -156,7 +159,7 @@ header a i:hover {
 #usario-incio a {
   width: 30px;
   height: 30px;
-}
+}   
 
 .titulo-producto {
   background-color: black;
@@ -335,7 +338,6 @@ footer div:first-child {
   }
 
   header {
-    height:25vh;
     width: 100vw;
     display: flex;
     
@@ -424,11 +426,11 @@ footer div:first-child {
   }
 
   header {
-    height: 30vh;
+    height: 43vh;
   }
 
   nav {
-    height: 5vh;
+    height: 10vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -451,12 +453,12 @@ footer div:first-child {
 
   header {
     width: 100vw;
-    height: 30vh;
+    height: 34vh;
   }
 
   nav {
     width: 100vw;
-    height: 5vh;
+    height: 30vh;
     gap: 4%;
   }
 }

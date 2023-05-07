@@ -7,17 +7,21 @@
      */
 
      if(isset($_GET['id'])){
-      $tabla = $_GET['nombre'];
-         // 1. GET['id'] 
-        $id = $_GET['id'];
-
-        // 2. Importar la clase Database para poder 
-       require_once('database.php');
-       $database = new database();
-       $database->delete($tabla, $id);
-
-       // 3. Redireccionar al index
-       header('Location: ../admin.php');
+      if(isset($_GET['tabla'])){
+         $tabla = $_GET['tabla'];
+            // 1. GET['id'] 
+           $id = $_GET['id'];
+   
+           // 2. Importar la clase Database para poder 
+          require_once('database.php');
+          $database = new database();
+          $database->delete($tabla, $id);
+   
+          // 3. Redireccionar al index
+          header("Location: ../admin.php?nombre= $tabla");
+      } else{
+         echo 'error nombre';
+      }
      } else{
         echo 'Error 404';
      }
