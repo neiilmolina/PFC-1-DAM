@@ -43,9 +43,9 @@
 
         <a href="localhost">¿Olvidaste tu contraseña?</a>
         <a href="signup.php">¿No tienes cuenta?</a>
-        <a href="../index.php">Volver a EcoScoter</a>
+        <a href="../index.php">Ir a EcoScoter</a>
 
     </main>
 </body>
-<script src="appLogin.js"></script>
+<script src="../js/appLogin.js"></script>
 </html>

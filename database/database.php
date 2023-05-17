@@ -27,6 +27,12 @@
             return $gbd;
         }
     
+        public function getById($tabla,$id){
+            $sql = "SELECT * FROM $tabla WHERE id = $id";
+            $resultados = self::conectar()->query($sql); // "self" es "this" en Java
+            return $resultados->fetch(PDO::FETCH_ASSOC);
+        }
+
         public function get($sql){
             $resultados = self::conectar()->query($sql); // "self" es "this" en Java
             return $resultados;

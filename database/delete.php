@@ -11,20 +11,23 @@
          $tabla = $_GET['tabla'];
             // 1. GET['id'] 
            $id = $_GET['id'];
-   
            // 2. Importar la clase Database para poder 
           require_once('database.php');
           $database = new database();
           $database->delete($tabla, $id);
    
           // 3. Redireccionar al index
-          header("Location: ../admin.php?nombre= $tabla");
+          // no me borra ya que hay id´s que son claves foraneas en otras tablas
+          
+          echo 'Se ha eliminado';
+          header('Location: ../admin.php?nombre=' . $tabla);
       } else{
          echo 'error nombre';
       }
      } else{
         echo 'Error 404';
      }
+
 
 
 ?>
