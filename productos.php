@@ -19,39 +19,6 @@
             echo '</a>';
     }
 
-    // function pintarProducto($id){
-    //     require_once ('database/database.php');
-    //     $database = new Database();
-    //     $marca = $database->get("SELECT marca FROM producto WHERE id = $id");
-    //     $modelo = $database->get("SELECT modelo FROM producto WHERE id = $id");
-    //     $tipo = $database->get("SELECT tipo FROM producto WHERE id = $id");
-    //     $precio = $database->get("SELECT precio FROM producto WHERE id = $id");
-
-
-    //     echo '<div class="venta">';
-    //         echo '<img  src="img/'. $tipo. ' '. $modelo.'.JPG" class="imagen-producto">';
-    //     echo '<div class="opciones">';
-    //             echo '<h2 class="titulo">'. $tipo .' '.$marca .' '. $modelo .'</h2>';
-    //             echo '<h1 class="precio">'.$precio .' €</h1>';
-    //         echo '<div class="cantidad">';
-    //                 echo '<p>Cantidad</p>';
-    //             echo '<div class="cantidad-opciones">';
-    //                 echo '<div class="restar">-</div>';
-    //                 echo '<div class="numero">1</div>';
-    //                 echo '<div class="sumar">+</div>';
-    //                 echo '</div>';
-    //             echo '</div>';
-    //         echo '<div class="botones">';
-    //             echo '<div class="favoritos"><3</div>';
-    //                 echo '<a href="" class="carrito">';
-    //                    echo '<i class="fas fa-shopping-cart"></i><span>Añadir al carrito</span>';
-    //                 echo '</a>';
-    //                 echo '<a href="" class="comprar">Comprar</a>';
-    //             echo '</div>';
-    //         echo '</div>';
-    //     echo '</div>';
-    // }
-
     function pintarProducto($id){
         require_once ('database/database.php');
         $database = new Database();
@@ -103,8 +70,25 @@
     <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
 </head>
 <body>
-    <?php
-        include 'header.php';
+<?php
+        session_start();
+        $usuarioNombre;
+        if(isset($_SESSION['pepito'])){
+        $usuarioNombre = $_SESSION['pepito']['nombre'];
+
+        if($_SESSION['pepito']['rol_id'] == 1){
+        include 'html/header-admin.php';
+
+        } else if($_SESSION['pepito']['rol_id'] == 2){
+        include 'html/header-user.php';
+
+        }else{
+        header('Location: ../html/login.php');
+        }
+        }
+        else{
+          header('Location: ../html/login.php');
+        }
     ?>
     <main>
         <?php

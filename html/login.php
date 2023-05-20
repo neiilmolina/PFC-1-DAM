@@ -1,6 +1,9 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,18 +19,25 @@
 
 <body>
     <main>
-
         <img src="../img/logo1.png" alt="">
         <h2>Inicia Sesion</h2>
-        <form action="">
+        <p style="color:red;"> 
+            <?php
+                if(isset($_GET['mensaje'])){
+                    $mensaje = $_GET['mensaje'];
+                    echo $mensaje;
+                }
+            ?>
+        </p>
+        <form action="../database/comprobar.php" method="POST">
             <div>
                 <label>Dirección de correo</label>
-                <input type="email" class="inicio" onblur="validarEmail()" autofocus>
+                <input name="email" type="email" class="inicio" onblur="validarEmail()" autofocus>
                 <span></span>
                 <br>
 
                 <label>Contraseña</label>
-                <input type="password" class="inicio">
+                <input name="password" type="password" class="inicio" onblur="validarContraseña()">
                 <span></span>
                 <br>
             </div>
@@ -37,7 +47,7 @@
                     <input id="marcar" type="checkbox">
                     <label>Recuérdame</label>
                 </div>
-                <button type="button" onclick="validar()">Acceder</button>
+                <?php echo '<button onclick="validar()">Acceder</button>'?>
             </div>
         </form>
 

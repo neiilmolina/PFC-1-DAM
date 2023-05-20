@@ -16,7 +16,6 @@
 
 <body>
     <main>
-
         <img src="../img/logo1.png" alt="">
         <h2>Registrate</h2>
         <form action="">

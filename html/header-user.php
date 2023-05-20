@@ -1,31 +1,22 @@
 <?php
     require_once ('database/database.php');
     $database = new Database();
-    $arrayTablas = ['Cliente', 'Producto', 'Trabajador', 'Distribuidor'];
-    $arrayTipos = ['Patinete', 'Bateria', 'Accesorio', 'Admin'];
+    $arrayTablas = ['Usuario', 'Producto', 'Distribuidor'];
+    $arrayTipos = ['Patinete', 'Bateria', 'Accesorio'];
     $arrayEstados = ['Nuevo', 'Reacondicionado'];
         function pintarNav($array1, $array2, $array3){
             foreach($array1 as $row){
                echo '<li class="dropdown">';
                    echo '<button class="dropbtn">'. $row .'</button>';
                    echo '<div class="dropdown-content">';
-                       if($row == 'Admin'){
-                        pintarOpcionAdmin($array3);
-                       } else{
-                        foreach($array2 as $opcion){
-                            echo '<a href= "filtro.php?tipo='. $row .'&estado='. $opcion.'">'. $opcion. '</a>';
-                        }
-                       }
+                    foreach($array2 as $opcion){
+                        echo '<a href= "filtro.php?tipo='. $row .'&estado='. $opcion.'">'. $opcion. '</a>';
+                    }
                     echo '</div>';
                 echo '</li>';
             }
         }
     
-        function pintarOpcionAdmin($array){
-            foreach($array as $row ){
-                echo '<a href= "admin.php?nombre='. $row .'">'. $row. '</a>';
-            }
-        }
 ?>
 
 <!DOCTYPE html>
@@ -57,6 +48,7 @@
             </div>
 
             <div id="usario-incio">
+                <span><?php echo $usuarioNombre?></span>
                 <a href="html/login.php"><i class="fas fa-user"></i></a>
                 <a href="html/carrito.php"><i class="fas fa-shopping-cart"></i></a>
             </div>

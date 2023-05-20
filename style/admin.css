@@ -6,7 +6,6 @@ body {
 table{
     border-collapse: separate;
     border-spacing: 0 10px;
-    margin-top:80px;
     width: 100%;
     text-align: center;
 }
@@ -52,6 +51,7 @@ tr:nth-child(even){
 }
 
 .suma{
+  margin-top:80px;
   background-color: green;
 }
 

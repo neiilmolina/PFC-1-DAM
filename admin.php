@@ -7,17 +7,14 @@
         $arrayTitulos = [];
 
         switch($tabla){ 
-            case 'Cliente':
-                $arrayTitulos =['id', 'nombre', 'apellidos', 'dni'];
+            case 'Usuario':
+                $arrayTitulos =['nombre', 'apellidos', 'dni', 'email', 'direccion', 'telefono','rol_id'];
                 break;
             case 'Producto':
-                $arrayTitulos =['id', 'tipo', 'marcas', 'modelo'];
+                $arrayTitulos =['tipo', 'marcas', 'modelo', 'precio', 'estado'];
                 break;
             case 'Distribuidor':
-                $arrayTitulos =['id', 'nombre', 'telefono'];
-                break;
-            case 'Trabajador':
-                $arrayTitulos =['id', 'nombre', 'apellidos', 'dni'];
+                $arrayTitulos =['nombre', 'direccion', 'email', 'telefono'];
                 break;
         }     
         
@@ -40,9 +37,8 @@
                 echo '<td>' . $row[$campo] . '</td>';
             }
                 echo '<td class = opciones> ';
-                    echo '<button class="suma"> <a href ="#"> <i class="fas fa-plus"></i> </a></button>';
                     echo '<button class="resta"> <a href ="database/delete.php?id='.$row['id'].'&tabla='. $tabla.'"> <i class="fas fa-minus"></i> </a></button>';
-                    echo '<button class="edit"> <a href ="#"> <i class="fas fa-edit"></i> </a></button>';
+                    echo '<button class="edit"> <a href ="html/edit.php?id='.$row['id'].'&tabla='. $tabla.'"> <i class="fas fa-edit"></i> </a></button>';
                 echo '</td>';
             echo '</tr>';
         }
@@ -69,9 +65,10 @@
 
 <body>
     <?php
-        include 'header.php';
+        include 'html/header-admin.php';
     ?>
     <main>
+        <?php echo '<button class="suma"> <a href ="html/create.php?nombre='.$nombre.'"> <i class="fas fa-plus"></i> </a></button>';?>
         <table>
             <?php
                 $arrayTitulos = elegirTabla($nombre);

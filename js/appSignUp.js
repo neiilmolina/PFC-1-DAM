@@ -8,6 +8,8 @@ let span = document.getElementsByTagName('span');
 
 let div = document.getElementsByTagName('div')[0];
 
+let button = button.getElementsByTagName('button');
+
 /**
  * @description Función que valida la contraseña con un regex
  * @param NO
@@ -51,6 +53,7 @@ function validarContraseña(){
 function confirmarContraseña(){
     let valor = inicioSesion['elements'][2]['value'];
     let contraseña = validarContraseña();
+    let verificar =false;
     /**
      * La contraseña debe tener:
      * -    un minimo de 7 caracteres   ----> .{7,}
@@ -68,6 +71,7 @@ function confirmarContraseña(){
             input[2].classList.add('correcto');
             span[2].textContent = 'Contraseña Válida'
             span[2].style.color = 'green'
+            verificar = true;
         } else{
             input[2].classList.remove('inicio');
             input[2].classList.remove('correcto');
@@ -84,7 +88,7 @@ function confirmarContraseña(){
         span[2].style.color = 'red'
     }
 
-    return valor;
+    return verificar
 }
 /**
  * @description Función que valida el email con un regex
@@ -94,13 +98,14 @@ function confirmarContraseña(){
 function validarEmail(){
     let valor = inicioSesion['elements'][0]['value'];
     let expresion=  /^\w+@[a-zA-z]+[.][a-zA-z]+$/;
-    
+    let verificar = false;
     if(expresion.test(valor)){
         input[0].classList.remove('inicio');
         input[0].classList.remove('incorrecto');
         input[0].classList.add('correcto');
         span[0].textContent = 'Correcto'
         span[0].style.color = 'green'
+        verificar = true;
     } else{
         input[0].classList.remove('inicio');
         input[0].classList.remove('correcto');
@@ -108,6 +113,9 @@ function validarEmail(){
         span[0].textContent = 'Incorrecto'
         span[0].style.color = 'red'
     }
+
+    
+    return verificar;
     
 }
 
