@@ -9,15 +9,17 @@ require_once ('../database/database.php');
 // 3. Invocar funcion login de Database.php
 $database = new Database();
 $respuesta = $database->login($email, $password);
-$mensaje = "No exite usuario con ese email y contraseña";
+$mensaje;
 
 // 4. Comprobar contenido de la respuesta
 if($respuesta == null){
+    $color = 'red';
+    $mensaje = "No exite usuario con este email y contraseña";
     // Ir al login
-        header('Location: ../html/login.php?mensaje='. $mensaje);
+    header('Location: login.php?mensaje='. $mensaje. '&color='.$color );
 }else{
     // Comprobamos rol: si es admin te mando a admin y si es usuario te mando a usuario.
-    if($respuesta['rol_id'] == 1 || $respuesta['rol_id'] == 2){
+    if($respuesta['rol_id'] != null){
         session_start();
         $_SESSION['pepito'] = $respuesta;
         header('Location: ../index.php');

@@ -25,9 +25,11 @@
     }
 
     function pintarFormulario($array, $nombre, $elemento){
-       echo '<form action="../database/update.php?nombre='.$nombre.'" method="POST">';
+       echo '<form action="../database/update.php?nombre='.$nombre.'&guardar=admin" method="POST">';
                 foreach($array as $campo){
-
+                    if($campo != 'id'){
+                        echo '<label>'.strtoupper(substr($campo, 0, 1)). substr($campo, 1,strlen($campo)).'</label>';
+                    }
                     switch($campo){
                         case 'precio':
                         case 'rol_id':
@@ -54,7 +56,7 @@
                         break;
                     }
                 }
-            echo '<button>Enviar</button>';
+            echo '<button class="enviar">Enviar</button>';
         echo '</form>';
     }
 ?>
@@ -67,6 +69,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/formulario.css">
 </head>
 <body>
     <main>

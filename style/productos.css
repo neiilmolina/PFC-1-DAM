@@ -107,3 +107,26 @@ h2{
   align-items: center;
   gap: 30px;
 }
+
+.mas-productos a{
+  text-decoration: none;
+  color: black;
+}
+
+.productos{
+  text-decoration: none;
+}
+
+
+@media screen and (max-width: 480px) {
+  .botones{
+    display:flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    gap:10px;
+  }
+}
+
+
+

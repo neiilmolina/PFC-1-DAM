@@ -1,8 +1,7 @@
 <?php
     require_once ('database/database.php');
     $database = new Database();
-    $id = $_GET['id'];
-
+    $idProducto;
     function generarNumeroAleatorio($min, $max) {
         return rand($min, $max);
     }
@@ -19,16 +18,29 @@
             echo '</a>';
     }
 
-    function pintarProducto($id){
+    function pintarProducto($idProducto){
         require_once ('database/database.php');
         $database = new Database();
-        $resultado = $database->getById('Producto', $id);
+        $resultado = $database->getById('Producto', $idProducto);
     
         $marca = $resultado['marcas'];
         $modelo = $resultado['modelo'];
         $tipo = $resultado['tipo'];
         $precio = $resultado['precio'];
-    
+        // $favorito = false;
+        // $href;
+        // if($favorito){
+        //     $href = "database/save.php?idUsuario='.$idUsuario.'&idProducto='.$idProducto.'&nombre=usuario_has_producto";
+        //     $favorito = false;
+        // } else{
+        //     $href = "database/save.php?idUsuario='.$idUsuario.'&idProducto='.$idProducto.'&nombre=usuario_has_producto";
+        //     $favorito = true;
+        // }
+
+        $href ="#";
+
+        // $favoritoValue = $favorito ? 'true' : 'false';
+
         echo '<div class="venta">';
             echo '<img  src="img/'. $tipo. ' '. $modelo.'.JPG" class="imagen-producto">';
         echo '<div class="opciones">';
@@ -43,7 +55,7 @@
                     echo '</div>';
                 echo '</div>';
             echo '<div class="botones">';
-                echo '<div class="favoritos"><3</div>';
+                echo '<a  class="favoritos" onclick="cambiarCorazon()"><i class="fas fa-heart"></i></a>';
                     echo '<a href="" class="carrito">';
                        echo '<i class="fas fa-shopping-cart"></i><span>Añadir al carrito</span>';
                     echo '</a>';
@@ -70,40 +82,29 @@
     <link rel="stylesheet" href="fontawesome/fontawesome/css/all.min.css">
 </head>
 <body>
-<?php
-        session_start();
-        $usuarioNombre;
-        if(isset($_SESSION['pepito'])){
-        $usuarioNombre = $_SESSION['pepito']['nombre'];
 
-        if($_SESSION['pepito']['rol_id'] == 1){
-        include 'html/header-admin.php';
-
-        } else if($_SESSION['pepito']['rol_id'] == 2){
-        include 'html/header-user.php';
-
-        }else{
-        header('Location: ../html/login.php');
-        }
-        }
-        else{
-          header('Location: ../html/login.php');
-        }
+    <?php
+        include 'auth/header.php';
     ?>
     <main>
         <?php
-        pintarProducto($id);
-        ?>
-        <h2>Más productos</h2>
-        <div class="mas-productos">
-            <?php
+        if(isset($_GET['id'])){
+            $idProducto = $_GET['id'];
+            pintarProducto($idProducto);
+        
+            echo '<h2>Más productos</h2>';
+            echo '<div class="mas-productos">';
+            
                 for($i = 0; $i<= 3; $i++){
                     $numero = generarNumeroAleatorio(1, 13);
                     $resultados = $database->getById('Producto',$numero);
                     pintarCard($resultados);
                 }
-            ?>
-        </div>
+            echo '</div>';
+        }
+        ?>
     </main>
 </body>
+
+<script src="js\appProductos.js"></script>
 </html>

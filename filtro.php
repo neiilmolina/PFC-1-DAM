@@ -43,25 +43,9 @@
 
 </head>
 <body>
-<?php
-        session_start();
-        $usuarioNombre;
-        if(isset($_SESSION['pepito'])){
-        $usuarioNombre = $_SESSION['pepito']['nombre'];
 
-        if($_SESSION['pepito']['rol_id'] == 1){
-        include 'html/header-admin.php';
-
-        } else if($_SESSION['pepito']['rol_id'] == 2){
-        include 'html/header-user.php';
-
-        }else{
-        header('Location: ../html/login.php');
-        }
-        }
-        else{
-          header('Location: ../html/login.php');
-        }
+    <?php
+        include 'auth/header.php';
     ?>
     <main>
         <?php 

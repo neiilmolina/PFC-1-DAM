@@ -49,16 +49,23 @@
         </div>
 
         <div id="abajo">
-            <a href="index.php"><img src="img/logo.png" alt=""></a>
+            <a href="index.php"><img src="img/logo.png" class="logo"></a>
 
             <div class="navegador">
-                <input type="text">
-                <button class="lupa"><i class="fas fa-search"></i></button>
+                <input type="hidden" class = "buscador">
+                <button class="lupa" onclick="ocultarBuscador()"><i class="fas fa-search"></i></button>
             </div>
 
             <div id="usario-incio">
-                <span><?php echo $usuarioNombre?></span>
-                <a href="html/login.php"><i class="fas fa-user"></i></a>
+                <div class="login">
+                    <span><?php echo $usuarioNombre?></span>
+                    <a class="login-btn"><i class="fas fa-user"></i></a>
+                    <div class ="contenido-login">
+                        <?php echo '<a href="ajustes.php?nombre=Usuario&id='. $id.'">Ajustes</a>'?>
+                        <a href=".php">Favoritos</a>
+                        <a href="auth/logout.php">Cerrar Sesión</a>
+                    </div>
+                </div>
                 <a href="html/carrito.php"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
@@ -72,3 +79,4 @@
     </nav>
     
 </body>
+</html>

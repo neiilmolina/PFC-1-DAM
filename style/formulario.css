@@ -1,0 +1,42 @@
+main{
+    margin-top: 90px;
+}
+
+form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-direction: column;
+}
+
+input{
+    width:300px;
+    padding:5px 7px 5px 15px;
+    border-radius:(4px);
+    border:2px solid #ddd;
+}
+
+.enviar{
+    background:black;
+    display:inline-block;
+    width:10%;
+    font-size:16px;
+    height:50px;
+    color:white;
+    text-decoration:none;
+    border:none;
+    border-radius:(4px);
+}
+
+.enviar:hover{
+    background-color: #b6d420;
+    color: black;
+}
+
+/* Pantalla de movil */
+@media screen and (max-width: 480px) {
+    .enviar{
+        width:30%;
+    }
+}

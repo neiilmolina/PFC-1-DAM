@@ -61,7 +61,7 @@ input{
 }
 
 button{
-    background:black;
+    background:grey;
     display:inline-block;
     width:100%;
     font-size:16px;
@@ -70,11 +70,6 @@ button{
     text-decoration:none;
     border:none;
     border-radius:(4px);
-}
-
-button:hover{
-    background-color: #b6d420;
-    color: black;
 }
 
 a{

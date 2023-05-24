@@ -1,13 +1,23 @@
 <?php
     
     if(isset($_GET['nombre'])){
+        $guardar = $_GET['guardar'];
         require_once ('database.php');
         $database = new Database();
         $nombre = $_GET['nombre'];
         $arrayTitulos = elegirTabla($nombre);
         $valores = asignarValores($arrayTitulos);
+        
         $database->save($nombre, $arrayTitulos, $valores);
-        header('Location: ../admin.php?nombre=' . $nombre);
+
+        if($guardar == 'admin'){
+            header('Location: ../admin.php?nombre=' . $nombre);
+        } else if($guardar == 'signup'){
+            $mensaje = 'Usuario registrado';
+            header('Location: ../auth/login.php?mensaje=' . $mensaje .'&color=green');
+        }
+        echo 'lo has conseguido';   
+        exit();
     } else{
         echo 'MAL';
     }
@@ -17,7 +27,7 @@
 
         switch($tabla){ 
             case 'Usuario':
-                $arrayTitulos =['nombre', 'apellidos', 'dni', 'email', 'direccion', 'telefono','rol_id'];
+                $arrayTitulos =['nombre', 'apellidos', 'dni', 'email', 'direccion', 'telefono','rol_id', 'password'];
                 break;
             case 'Producto':
                 $arrayTitulos =['tipo', 'marcas', 'modelo', 'precio', 'estado'];
@@ -37,8 +47,10 @@
         $array = [];
         foreach($arrayTitulos as $row){
             array_push($array, $_POST[$row]);
+            echo $row .' ';
         }
         return $array;
+        exit();
     }
 
 ?>

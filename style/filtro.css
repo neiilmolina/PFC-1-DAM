@@ -30,8 +30,7 @@ body {
   .productos:hover {
     border: 1px solid black;
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    width: 260px;
-    height: 440px;
+    scale: 1.1;
     transition: 0.40s;
   }
   

@@ -22,7 +22,7 @@
     }
 
     function pintarFormulario($array, $nombre){
-       echo '<form action="../database/save.php?nombre='.$nombre.'" method="POST">';
+       echo '<form action="../database/save.php?nombre='.$nombre.'&guardar=admin" method="POST">';
                 foreach($array as $campo){
 
                     switch($campo){
@@ -48,7 +48,7 @@
                         break;
                     }
                 }
-            echo '<button>Enviar</button>';
+            echo '<button class="enviar">Enviar</button>';
         echo '</form>';
     }
 ?>
@@ -61,6 +61,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../style/formulario.css">
 </head>
 <body>
     <main>

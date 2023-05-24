@@ -203,11 +203,11 @@ main div:first-child{
 
 @media screen and (max-width: 480px){
     header {
-        height: 70vh;
+        height: 20vh;
     }
     header img{
-        width: 240px;
-        height: 90px;
+        width: 250px;
+        height: 70px;
     }
 
     main {

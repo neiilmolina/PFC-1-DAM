@@ -17,6 +17,11 @@
             }
         }
     
+        function pintarOpcionAdmin($array){
+            foreach($array as $row ){
+                echo '<a href= "admin.php?nombre='. $row .'">'. $row. '</a>';
+            }
+        }
 ?>
 
 <!DOCTYPE html>
@@ -40,7 +45,7 @@
         </div>
 
         <div id="abajo">
-            <a href="index.php"><img src="img/logo.png" alt=""></a>
+            <a href="index.php" class="logo"><img src="img/logo.png" alt=""></a>
 
             <div class="navegador">
                 <input type="text">
@@ -48,9 +53,15 @@
             </div>
 
             <div id="usario-incio">
-                <span><?php echo $usuarioNombre?></span>
-                <a href="html/login.php"><i class="fas fa-user"></i></a>
-                <a href="html/carrito.php"><i class="fas fa-shopping-cart"></i></a>
+                <div class="login">
+                <span></span> 
+                    <a class="login-btn"><i class="fas fa-user"></i></a>
+                    <div class ="contenido-login">
+                        <a href="auth/login.php">Inicia sesión</a>
+                        <a href="auth/signup.php">Registrate</a>
+                    </div>
+                </div>
+                <a href="auth/login.php"><i class="fas fa-shopping-cart"></i></a>
             </div>
         </div>
     </header>

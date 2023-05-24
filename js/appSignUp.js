@@ -8,7 +8,7 @@ let span = document.getElementsByTagName('span');
 
 let div = document.getElementsByTagName('div')[0];
 
-let button = button.getElementsByTagName('button');
+let button = document.getElementsByTagName('button')[0];
 
 /**
  * @description Función que valida la contraseña con un regex
@@ -51,7 +51,7 @@ function validarContraseña(){
  * @returns NO
  */
 function confirmarContraseña(){
-    let valor = inicioSesion['elements'][2]['value'];
+    let valor = inicioSesion['elements'][3]['value'];
     let contraseña = validarContraseña();
     let verificar =false;
     /**
@@ -66,24 +66,24 @@ function confirmarContraseña(){
     
     if(expresion.test(valor)){
         if(contraseña === valor){
-            input[2].classList.remove('inicio');
-            input[2].classList.remove('incorrecto');
-            input[2].classList.add('correcto');
+            input[3].classList.remove('inicio');
+            input[3].classList.remove('incorrecto');
+            input[3].classList.add('correcto');
             span[2].textContent = 'Contraseña Válida'
             span[2].style.color = 'green'
             verificar = true;
         } else{
-            input[2].classList.remove('inicio');
-            input[2].classList.remove('correcto');
-            input[2].classList.add('incorrecto');
+            input[3].classList.remove('inicio');
+            input[3].classList.remove('correcto');
+            input[3].classList.add('incorrecto');
             span[2].textContent = 'No es la misma contraseña'
             span[2].style.color = 'red'
 
         }
     }else{
-        input[2].classList.remove('inicio');
-        input[2].classList.remove('correcto');
-        input[2].classList.add('incorrecto');
+        input[3].classList.remove('inicio');
+        input[3].classList.remove('correcto');
+        input[3].classList.add('incorrecto');
         span[2].textContent = 'Incorrecto'
         span[2].style.color = 'red'
     }
@@ -124,8 +124,29 @@ function validarEmail(){
  * @param NO
  * @returns NO
  */
+function activarBoton(){
+    if(validarEmail() && confirmarContraseña()){
+        button.disabled= false;
+        button.addEventListener("mouseover", function() {
+            button.style.backgroundColor = "#b6d420";
+            button.style.color="black"
+            button.style.cursor="pointer"
+          });
+          
+            button.addEventListener("mouseout", function() {
+                button.style.backgroundColor = "black";
+                button.style.color="white"
+            button.style.cursor="default"
+          });
+    } else{
+        button.disabled = true;
+        button.style.backgroundColor = "grey";
+    }
+}
+
 function validar(){
     validarEmail();
     validarContraseña();
     confirmarContraseña();
+    activarBoton();
 }

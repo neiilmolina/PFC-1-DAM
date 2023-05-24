@@ -67,3 +67,18 @@ tr:nth-child(even){
   color: white;
   transition: 0.25s;
 }
+
+/* Pantalla de movil */
+@media screen and (max-width: 480px) {
+  header {
+    width: 100%;
+  }
+  table{
+    width: 10%;
+  }
+}
+
+/* Pantalla de portatil */
+@media screen and (min-width: 769px) and (max-width: 1279px) {
+  
+}
